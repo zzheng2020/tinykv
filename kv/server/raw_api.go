@@ -115,8 +115,8 @@ func (server *Server) RawScan(_ context.Context, req *kvrpcpb.RawScanRequest) (*
 		if limit == 0 {
 			break
 		}
-		item := dbIter.Item()
 
+		item := dbIter.Item()
 		value, _ := item.Value()
 		kvPair = append(kvPair, &kvrpcpb.KvPair{
 			Key:   item.Key(),
